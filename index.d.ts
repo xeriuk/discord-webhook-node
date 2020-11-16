@@ -10,30 +10,10 @@ export class Webhook {
   setAvatar(avatar: string): void;
   sendFile(filePath: string): Promise<void>;
   send(message: MessageBuilder | string): Promise<void>;
-  info(
-    title: string,
-    fieldName?: string,
-    fieldValue?: string,
-    inline?: boolean
-  ): Promise<void>;
-  success(
-    title: string,
-    fieldName?: string,
-    fieldValue?: string,
-    inline?: boolean
-  ): Promise<void>;
-  warning(
-    title: string,
-    fieldName?: string,
-    fieldValue?: string,
-    inline?: boolean
-  ): Promise<void>;
-  error(
-    title: string,
-    fieldName?: string,
-    fieldValue?: string,
-    inline?: boolean
-  ): Promise<void>;
+  info(title: string, fieldName?: string, fieldValue?: string, inline?: boolean): Promise<void>;
+  success(title: string, fieldName?: string, fieldValue?: string, inline?: boolean): Promise<void>;
+  warning(title: string, fieldName?: string, fieldValue?: string, inline?: boolean): Promise<void>;
+  error(title: string, fieldName?: string, fieldValue?: string, inline?: boolean): Promise<void>;
 }
 
 export type WebhookField = {
@@ -76,11 +56,11 @@ export class MessageBuilder {
   setText(text: string): this;
   setAuthor(author?: string, authorImage?: string, authorUrl?: string): this;
   setTitle(title: string): this;
-  setUrl(url: string): this;
+  setURL(url: string): this;
   setThumbnail(thumbnailUrl: string): this;
   setImage(image: string): this;
   setTimestamp(): this;
-  setColor(color: number): this;
+  setColor(color: number | string): this;
   setDescription(description: string): this;
   addField(fieldName: string, fieldValue: string, inline?: boolean): this;
   setFooter(footer: string, footerImage?: string): this;
